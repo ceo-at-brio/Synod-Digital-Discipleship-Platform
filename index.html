@@ -530,7 +530,7 @@
           <div class="sys-node">
             <div class="n">III</div>
             <h5>The Gathering</h5>
-            <p>Meets the group</p>
+            <p>Joins a group via code</p>
           </div>
           <div class="sys-node">
             <div class="n">IV</div>
@@ -897,19 +897,77 @@
   <div class="wrap">
     <div class="actbadge">Act III · Flow 3</div>
     <h2>The Gathering — small groups &amp; Anchor accountability</h2>
-    <p class="lede">Fulfils <b>Section 6: Basic Fraternity &amp; Accountability (p. 6)</b>. The group dashboard is deliberately designed as an <b>offline trigger</b>: status dots are meant to prompt a real phone call or a shared lunch — not replace face-to-face fellowship.</p>
+    <p class="lede">Fulfils <b>Section 6: Basic Fraternity &amp; Accountability (p. 6)</b>. Groups are formed with a simple 6-character code. The group dashboard is an <b>offline trigger</b>: status dots prompt a real phone call or lunch — not an in-app chat feed.</p>
 
-    <div class="grid g2" style="margin-top:24px;align-items:start">
-      <div>
-        <h4 style="margin-top:0">Group formation &amp; the Anchor role</h4>
+    <h3>Group formation &amp; the Anchor role</h3>
+    <ul class="clean">
+      <li>Groups are strictly capped at <b>3 to 7 people maximum</b> to maintain intimacy and trust.</li>
+      <li><b>The Group Anchor</b> (Marcus) acts as the spiritual facilitator with administrative oversight:</li>
+      <li><b>Pinned “Thought of the Day”</b> — Marcus posts a short reflection (<b>max 200 characters</b>) pinned at the top of the dashboard. Anchor-only <b>[ ✏️ Edit Message ]</b>.</li>
+      <li><b>Roster moderation</b> — Marcus can remove inactive members via a <b>[⋮]</b> menu to reopen invite slots under the 7-person limit.</li>
+    </ul>
+
+    <h3>The 6-character code-only join flow</h3>
+    <p style="font-size:14px;color:var(--ink-soft);max-width:76ch">Groups are created and joined strictly via a simple <b>6-character code</b> — no complex web links or redirects.</p>
+
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card">
+        <h4 style="margin-top:0">How the Creator (Anchor) forms a group</h4>
         <ul class="clean">
-          <li>Groups (cohorts) are capped at <b>3 to 7 people maximum</b> to maintain intimacy and trust.</li>
-          <li><b>The Group Anchor</b> (Marcus in the story) acts as the spiritual facilitator, with exactly <b>two administrative tools</b>:</li>
-          <li><b>Pinned “Thought of the Day”</b> — Marcus posts a short reflection (<b>max 200 characters</b>) pinned at the top of the group dashboard. Anchor-only <b>[ ✏️ Edit Message ]</b> control.</li>
-          <li><b>Roster moderation</b> — Marcus can remove inactive members via a <b>[⋮]</b> menu to reopen invite slots under the 7-person limit.</li>
+          <li>In the <b>Community</b> tab, taps <b>“Create Small Group”</b>.</li>
+          <li>Enters a group name.</li>
+          <li>The app assigns them as the <b>Anchor</b> and generates a unique 6-character code (e.g. <b>CAP-789</b>).</li>
+          <li>The Anchor shares the code with up to <b>6 friends</b> (text, word of mouth — whatever is easiest).</li>
         </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">How members join</h4>
+        <ul class="clean">
+          <li>In the <b>Community</b> tab, taps <b>“Join with Code”</b>.</li>
+          <li>Enters the code (e.g. <b>CAP-789</b>).</li>
+          <li>Sees a confirmation modal: <i>“Join 'Capitol Hill Cohort' (Anchor: Marcus)?”</i></li>
+          <li>Confirms and is added to the group immediately.</li>
+        </ul>
+      </div>
+    </div>
 
-        <h4>The Group Dashboard (The Offline Trigger)</h4>
+    <div class="card" style="margin-top:16px">
+      <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:14px">Join flow</div>
+      <div class="grid g3">
+        <div style="border:1px solid var(--line);border-radius:12px;padding:14px;background:#fafbfe">
+          <div style="font-size:12px;font-weight:700;color:var(--brand);margin-bottom:8px">1 · Create</div>
+          <p style="margin:0;font-size:13.2px;color:var(--ink-soft)">Creator taps <b>“Create Group”</b> → gets code <b>CAP-789</b> → tells friends or texts the code.</p>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:12px;padding:14px;background:#fafbfe">
+          <div style="font-size:12px;font-weight:700;color:var(--brand);margin-bottom:8px">2 · Enter code</div>
+          <p style="margin:0;font-size:13.2px;color:var(--ink-soft)">Friend opens app → taps <b>“Join with Code”</b> → enters <b>CAP-789</b>.</p>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:12px;padding:14px;background:#fafbfe">
+          <div style="font-size:12px;font-weight:700;color:var(--brand);margin-bottom:8px">3 · Confirm</div>
+          <p style="margin:0;font-size:13.2px;color:var(--ink-soft)">Modal: <i>“Join Capitol Hill Cohort (Anchor: Marcus)?”</i> → <b>🟢 Confirmed: Added to Group!</b></p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Guardrails &amp; rules</h3>
+    <div class="grid g3" style="margin-top:12px">
+      <div class="rule">
+        <h5>7-member hard cap</h5>
+        <p>If an 8th person enters the code, entry is blocked: <i>“This group has reached its maximum capacity of 7 members.”</i></p>
+      </div>
+      <div class="rule">
+        <h5>Single active group</h5>
+        <p>Users can belong to <b>only one active group</b> at a time.</p>
+      </div>
+      <div class="rule">
+        <h5>Lock / Regenerate code</h5>
+        <p>The Anchor can tap <b>“Lock Group”</b> to close entry once full, or <b>“Regenerate Code”</b> to invalidate an old code.</p>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:28px;align-items:start">
+      <div>
+        <h4 style="margin-top:0">The Group Dashboard (The Offline Trigger)</h4>
         <ul class="clean">
           <li>Daily <b>member status dots</b> show who has checked in (🟢), who needs support (🟡), and who hasn't checked in (⚪).</li>
           <li>Those dots are the cue to reach out offline — a phone call or lunch — not an in-app chat feed.</li>
@@ -936,14 +994,14 @@
             <p>Marcus (Anchor): “Big deadline week for many—remember to take a 10-minute walk at lunch today and breathe!”</p>
             <div style="margin-top:10px;font-size:12px;color:var(--brand);font-weight:650">✏️ Edit Message <span style="color:var(--muted);font-weight:500">(Anchor only)</span></div>
           </div>
-          <div style="padding:0 18px 10px"><div class="ph-lbl">📋 Member Status Today · Offline trigger</div></div>
+          <div style="padding:0 18px 10px"><div class="ph-lbl">📋 Member Status Today · Offline trigger · Code CAP-789</div></div>
           <div class="rrow"><span class="who">Marcus <span style="color:var(--muted);font-weight:500">(Anchor)</span></span><span class="st"><span class="dot g"></span>🟢 Checked In</span></div>
           <div class="rrow"><span class="who">Alex</span><span class="st"><span class="dot g"></span>🟢 Checked In</span></div>
           <div class="rrow"><span class="who">Sarah</span><span class="st"><span class="dot y"></span>🟡 Needs Support</span></div>
           <div class="rrow"><span class="who">David</span><span class="st"><span class="dot g"></span>🟢 Checked In</span></div>
           <div class="rrow"><span class="who">Maya</span><span class="st"><span class="dot w"></span>⚪ Hasn't checked in <span style="color:var(--muted)">[⋮]</span></span></div>
         </div>
-        <div class="mockcap">Anchor [⋮] on Maya reopens an invite slot under the 7-person cap. Status dots prompt a real call or lunch.</div>
+        <div class="mockcap">Anchor can Lock Group, Regenerate Code, or [⋮] remove a member under the 7-person cap.</div>
       </div>
     </div>
   </div>
