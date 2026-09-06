@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Synod Digital Discipleship Platform — Scope of Work | Metro D.C. Synod</title>
+<style>
+  :root{
+    --ink:#1a1c2c;
+    --ink-soft:#4a4f66;
+    --muted:#767c95;
+    --line:#e3e6f0;
+    --bg:#f6f7fb;
+    --card:#ffffff;
+    --brand:#4b3f8f;
+    --brand-soft:#efeafc;
+    --brand-2:#0f7d6b;
+    --brand-2-soft:#e5f5f1;
+    --gold:#a9822b;
+    --gold-soft:#fdf5e3;
+    --radius:14px;
+    --shadow:0 1px 2px rgba(26,28,44,.05), 0 8px 24px rgba(26,28,44,.06);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Layout ---------- */
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  section:first-of-type{border-top:none}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex;align-items:center;gap:22px;height:58px}
+  .topbar .brand{font-weight:700;font-size:14px;letter-spacing:-.01em;white-space:nowrap}
+  .topbar nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+  .topbar nav::-webkit-scrollbar{display:none}
+  .topbar nav a{
+    font-size:13px;color:var(--ink-soft);text-decoration:none;
+    padding:6px 11px;border-radius:8px;white-space:nowrap;font-weight:500;
+  }
+  .topbar nav a:hover{background:var(--brand-soft);color:var(--brand)}
+
+  /* ---------- Cover ---------- */
+  .cover{
+    background:linear-gradient(160deg,#2c2555 0%,#4b3f8f 55%,#6b5cb8 100%);
+    color:#fff;padding:76px 0 68px;border:none;
+  }
+  .cover .eyebrow{
+    display:inline-block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);
+    padding:6px 13px;border-radius:99px;margin-bottom:22px;font-weight:600;
+  }
+  .cover h1{
+    font-size:clamp(30px,4.4vw,48px);line-height:1.12;margin:0 0 16px;
+    letter-spacing:-.028em;font-weight:700;max-width:22ch;
+  }
+  .cover .sub{font-size:17px;color:rgba(255,255,255,.86);max-width:62ch;margin:0 0 34px}
+  .cover .sub strong{color:#fff;font-weight:600}
+  .meta{display:flex;flex-wrap:wrap;gap:14px}
+  .meta div{
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+    padding:11px 16px;border-radius:10px;min-width:150px;
+  }
+  .meta span{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:3px;font-weight:600}
+  .meta b{font-size:14px;font-weight:600}
+
+  /* ---------- Typography ---------- */
+  .kicker{
+    font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--brand);font-weight:700;margin-bottom:10px;
+  }
+  h2{font-size:clamp(23px,2.6vw,31px);line-height:1.2;margin:0 0 12px;letter-spacing:-.022em;font-weight:700}
+  h3{font-size:18px;margin:34px 0 12px;letter-spacing:-.012em;font-weight:650}
+  h4{font-size:14.5px;margin:22px 0 8px;font-weight:650;color:var(--ink)}
+  .lede{font-size:16.5px;color:var(--ink-soft);max-width:76ch;margin:0 0 8px}
+  p{margin:0 0 14px}
+  a{color:var(--brand)}
+
+  /* ---------- Cards ---------- */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:860px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+  /* At-a-glance stats */
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+  .stat b{display:block;font-size:27px;line-height:1.1;letter-spacing:-.03em;color:var(--brand);font-weight:700}
+  .stat span{display:block;font-size:13px;color:var(--muted);margin-top:6px}
+
+  /* Act pill */
+  .actbadge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--brand-soft);color:var(--brand);
+    font-size:12px;font-weight:700;letter-spacing:.02em;
+    padding:5px 12px;border-radius:99px;margin-bottom:14px;
+  }
+
+  /* ---------- System flow (five acts) ---------- */
+  .sysflow{margin-top:26px}
+  .sys-block{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px;box-shadow:var(--shadow);
+  }
+  .sys-block.admin{border-color:#c9e9e0;background:linear-gradient(180deg,#f3fbf8 0%,#fff 55%)}
+  .sys-block .slabel{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    padding:5px 10px;border-radius:99px;margin-bottom:12px;
+  }
+  .sys-block.admin .slabel{color:var(--brand-2);background:var(--brand-2-soft)}
+  .sys-block.user .slabel{color:var(--brand);background:var(--brand-soft)}
+  .sys-block h3{margin:0 0 4px;font-size:18px;letter-spacing:-.015em}
+  .sys-block .sdesc{margin:0;font-size:13.5px;color:var(--ink-soft)}
+
+  .sys-arrow{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:14px 0 10px;gap:4px;
+  }
+  .sys-arrow .line{
+    width:2px;height:22px;background:linear-gradient(180deg,var(--brand-2),var(--brand));
+    border-radius:2px;
+  }
+  .sys-arrow .cap{
+    font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);background:#fff;border:1px solid var(--line);
+    border-radius:99px;padding:4px 12px;
+  }
+  .sys-arrow .chev{color:var(--brand);font-size:16px;line-height:1}
+
+  .sys-path{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:18px;
+    position:relative;
+  }
+  @media(max-width:720px){.sys-path{grid-template-columns:1fr;gap:10px}}
+  .sys-node{
+    text-align:center;padding:0 8px;position:relative;
+  }
+  .sys-node::after{
+    content:"→";position:absolute;right:-6px;top:18px;color:var(--muted);
+    font-size:16px;font-weight:600;
+  }
+  .sys-node:last-child::after{display:none}
+  @media(max-width:720px){
+    .sys-node::after{content:"↓";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}
+    .sys-node:last-child::after{display:none}
+  }
+  .sys-node .n{
+    width:36px;height:36px;border-radius:10px;background:var(--brand);color:#fff;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:13px;margin-bottom:10px;
+  }
+  .sys-node h5{margin:0 0 4px;font-size:14px;font-weight:700}
+  .sys-node p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+
+  .sys-admin-row{
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:14px;
+  }
+  .sys-admin-row .n{
+    width:36px;height:36px;border-radius:10px;background:var(--brand-2);color:#fff;
+    display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;
+  }
+  .sys-admin-row h5{margin:0 0 2px;font-size:15px;font-weight:700}
+  .sys-admin-row p{margin:0;font-size:13px;color:var(--ink-soft)}
+  .sys-pipes{
+    display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;
+  }
+  .sys-pipes span{
+    font-size:12px;font-weight:650;color:#0c5c4f;background:#fff;
+    border:1px solid #c9e9e0;border-radius:8px;padding:6px 10px;
+  }
+
+  /* ---------- Timeline ---------- */
+  .timeline{position:relative;margin:22px 0 0;padding-left:0}
+  .tl-item{display:grid;grid-template-columns:104px 1fr;gap:18px;position:relative;padding-bottom:22px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{
+    content:"";position:absolute;left:104px;top:26px;bottom:-2px;width:2px;
+    background:var(--line);transform:translateX(-1px);
+  }
+  .tl-item:last-child::before{display:none}
+  .tl-time{
+    text-align:right;font-variant-numeric:tabular-nums;font-weight:700;font-size:13.5px;
+    color:var(--brand);padding-top:2px;
+  }
+  .tl-body{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 18px;box-shadow:var(--shadow)}
+  .tl-body h5{margin:0 0 5px;font-size:14px;font-weight:650}
+  .tl-body p{margin:0;font-size:13.4px;color:var(--ink-soft)}
+  @media(max-width:620px){
+    .tl-item{grid-template-columns:1fr;gap:8px}
+    .tl-item::before{display:none}
+    .tl-time{text-align:left}
+  }
+
+  /* ---------- Tables ---------- */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow)}
+  table{width:100%;border-collapse:collapse;font-size:13.4px;min-width:640px}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{
+    background:#fafbfe;font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--muted);font-weight:700;white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:#fcfcff}
+  td.num{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap;font-weight:600}
+  .tag{
+    display:inline-block;font-size:11.5px;font-weight:650;padding:3px 9px;border-radius:6px;
+    background:var(--brand-soft);color:var(--brand);white-space:nowrap;
+  }
+  .tag.green{background:var(--brand-2-soft);color:var(--brand-2)}
+  .tag.gold{background:var(--gold-soft);color:var(--gold)}
+
+  /* ---------- Lists ---------- */
+  ul.clean{list-style:none;padding:0;margin:0}
+  ul.clean li{position:relative;padding-left:24px;margin-bottom:10px;font-size:14px;color:var(--ink-soft)}
+  ul.clean li::before{
+    content:"";position:absolute;left:7px;top:9px;width:6px;height:6px;
+    border-radius:50%;background:var(--brand);
+  }
+  ul.clean li b,ul.clean li strong{color:var(--ink);font-weight:650}
+  ul.check li::before{
+    content:"✓";left:0;top:0;width:auto;height:auto;background:none;
+    color:var(--brand-2);font-weight:800;font-size:13px;
+  }
+
+  /* ---------- Rules (streak engine) ---------- */
+  .rule{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:10px;padding:16px 18px}
+  .rule h5{margin:0 0 6px;font-size:14.5px;font-weight:650}
+  .rule p{margin:0;font-size:13.4px;color:var(--ink-soft)}
+
+  /* ---------- Phone mockup ---------- */
+  .phone{
+    width:322px;max-width:100%;margin:0 auto;background:#fff;
+    border:1px solid var(--line);border-radius:26px;padding:14px;
+    box-shadow:0 18px 44px rgba(26,28,44,.14);
+  }
+  .ph-top{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;padding:0 6px 10px;font-weight:600}
+  .ph-greet{font-size:18px;font-weight:700;letter-spacing:-.02em}
+  .ph-date{font-size:12.5px;color:var(--muted);margin-top:1px}
+  .ph-lit{
+    margin-top:10px;background:var(--gold-soft);color:#7d6220;border:1px solid #f0e2bd;
+    font-size:12px;font-weight:650;padding:7px 11px;border-radius:8px;
+  }
+  .ph-block{margin-top:12px;border:1px solid var(--line);border-radius:12px;padding:13px}
+  .ph-lbl{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
+  .ph-ratio{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;font-weight:650}
+  .bar{height:9px;border-radius:99px;background:#eceefa;margin-top:9px;overflow:hidden}
+  .bar i{display:block;height:100%;width:88%;background:linear-gradient(90deg,#0f7d6b,#2aa88f);border-radius:99px}
+  .ph-btn{
+    display:block;width:100%;text-align:center;font-size:13px;font-weight:650;
+    padding:10px;border-radius:9px;margin-top:8px;border:1px solid transparent;
+  }
+  .ph-btn.primary{background:var(--brand);color:#fff}
+  .ph-btn.ghost{background:#f4f6fd;color:var(--ink-soft);border-color:var(--line)}
+  .ph-btn.spotify{background:var(--brand-2-soft);color:var(--brand-2);border-color:#c9e9e0}
+  .habit{display:flex;gap:10px;align-items:flex-start;font-size:12.8px;padding:7px 0;border-bottom:1px dashed var(--line)}
+  .habit:last-child{border-bottom:none}
+  .box{
+    flex:0 0 17px;height:17px;border-radius:5px;border:1.6px solid #cfd4e6;
+    display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;margin-top:1px;
+  }
+  .box.on{background:var(--brand-2);border-color:var(--brand-2)}
+  .habit b{font-weight:650}
+  .mockcap{text-align:center;font-size:12px;color:var(--muted);margin-top:14px}
+
+  /* ---------- Roster mockup ---------- */
+  .roster{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .roster header{
+    background:#fafbfe;border-bottom:1px solid var(--line);padding:14px 18px;
+    display:flex;justify-content:space-between;align-items:center;font-weight:650;font-size:14px;
+  }
+  .anchor-msg{margin:16px 18px;background:var(--brand-soft);border-radius:10px;padding:14px 16px}
+  .anchor-msg .who{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);font-weight:700;margin-bottom:6px}
+  .anchor-msg p{margin:0;font-size:13.4px;color:#3d3470;font-style:italic}
+  .rrow{display:flex;justify-content:space-between;align-items:center;padding:11px 18px;border-top:1px solid var(--line);font-size:13.6px}
+  .rrow .who{font-weight:600}
+  .rrow .st{font-size:12.5px;font-weight:650;display:flex;align-items:center;gap:7px}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+  .dot.g{background:#0f9d76}.dot.y{background:#e0a52b}.dot.w{background:#c3c8db}
+
+  /* ---------- Callout ---------- */
+  .callout{
+    background:var(--brand-2-soft);border:1px solid #c9e9e0;border-left:3px solid var(--brand-2);
+    border-radius:10px;padding:16px 18px;font-size:13.8px;color:#0c5c4f;
+  }
+  .callout b{color:#08423a}
+  .callout.warn{background:var(--gold-soft);border-color:#f0e2bd;border-left-color:var(--gold);color:#6f5518}
+  .callout.warn b{color:#54400f}
+  .callout.soft{background:var(--brand-soft);border-color:#ddd4f5;border-left-color:var(--brand);color:#3d3470}
+  .callout.soft b{color:#2c2555}
+
+  .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .pill{
+    display:inline-flex;align-items:center;gap:6px;
+    background:#fff;border:1px solid var(--line);border-radius:99px;
+    padding:6px 12px;font-size:12.5px;font-weight:650;color:var(--ink-soft);
+  }
+
+  .goalbanner{
+    margin-top:10px;background:var(--brand-2-soft);border:1px solid #c9e9e0;
+    color:#0c5c4f;font-size:12px;font-weight:700;padding:9px 11px;border-radius:8px;text-align:center;
+  }
+
+  .decision{
+    display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin-top:16px;
+  }
+  @media(max-width:700px){.decision{grid-template-columns:1fr}}
+  .decision .hub{
+    background:var(--brand);color:#fff;border-radius:12px;padding:16px;text-align:center;
+    display:flex;flex-direction:column;justify-content:center;min-width:140px;
+  }
+  .decision .hub b{font-size:14px}
+  .decision .hub span{font-size:12px;opacity:.85;margin-top:4px}
+  .decision .out{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+  .decision .out h5{margin:0 0 6px;font-size:14px}
+  .decision .out p{margin:0;font-size:13px;color:var(--ink-soft)}
+
+  /* ---------- Desktop CMS mockup ---------- */
+  .desk{
+    margin-top:22px;background:#e8eaf2;border:1px solid var(--line);border-radius:16px;
+    padding:14px;box-shadow:var(--shadow);
+  }
+  .desk-chrome{
+    display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:10px 10px 0 0;padding:9px 12px;
+  }
+  .desk-dots{display:flex;gap:5px}
+  .desk-dots i{width:9px;height:9px;border-radius:50%;display:block;background:#d5d9e8}
+  .desk-dots i:nth-child(1){background:#ff6b6b}
+  .desk-dots i:nth-child(2){background:#f5c542}
+  .desk-dots i:nth-child(3){background:#51cf66}
+  .desk-url{
+    flex:1;background:#f4f5fa;border:1px solid var(--line);border-radius:7px;
+    padding:5px 12px;font-size:12px;color:var(--muted);font-weight:500;
+  }
+  .desk-body{
+    display:grid;grid-template-columns:200px 1fr;background:#fff;
+    border:1px solid var(--line);border-top:none;border-radius:0 0 10px 10px;overflow:hidden;
+    min-height:340px;
+  }
+  @media(max-width:760px){.desk-body{grid-template-columns:1fr}}
+  .desk-nav{background:#2c2555;color:#fff;padding:16px 12px}
+  .desk-nav .who{font-size:11px;opacity:.65;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-bottom:12px;padding:0 6px}
+  .desk-nav .user{display:flex;align-items:center;gap:9px;padding:8px 8px 14px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:10px}
+  .desk-nav .avatar{
+    width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.18);
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;
+  }
+  .desk-nav .uname{font-size:13px;font-weight:650}
+  .desk-nav .urole{font-size:11px;opacity:.65}
+  .desk-nav a{
+    display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:8px;
+    font-size:12.5px;font-weight:600;color:rgba(255,255,255,.78);text-decoration:none;margin-bottom:3px;
+  }
+  .desk-nav a.on{background:rgba(255,255,255,.14);color:#fff}
+  .desk-nav a span{opacity:.9}
+  .desk-main{padding:18px 20px;background:#fafbfe}
+  .desk-main .toprow{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:12px;flex-wrap:wrap}
+  .desk-main h5{margin:0;font-size:15px;font-weight:700;letter-spacing:-.01em}
+  .desk-main .sub{font-size:12px;color:var(--muted);font-weight:500;margin-top:2px}
+  .desk-btn{
+    background:var(--brand);color:#fff;border:none;border-radius:8px;
+    padding:8px 12px;font-size:12px;font-weight:650;white-space:nowrap;
+  }
+  .desk-cal{display:grid;grid-template-columns:88px repeat(3,1fr);gap:8px;font-size:12px}
+  @media(max-width:560px){.desk-cal{grid-template-columns:1fr}}
+  .desk-cal .ch{
+    background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;
+    font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;
+  }
+  .desk-cal .day{
+    background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px;
+    font-weight:700;font-size:12.5px;color:var(--ink);display:flex;flex-direction:column;justify-content:center;
+  }
+  .desk-cal .day small{font-weight:500;color:var(--muted);font-size:11px}
+  .desk-cal .cell{
+    background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px;
+    font-size:12px;color:var(--ink-soft);line-height:1.4;
+  }
+  .desk-cal .cell.ok{border-color:#c9e9e0;background:var(--brand-2-soft);color:#0c5c4f}
+  .desk-cal .cell.pending{border-style:dashed;color:var(--muted)}
+  .desk-cal .cell b{display:block;font-size:11px;font-weight:700;margin-bottom:3px}
+  .desk-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .desk-chip{
+    flex:1;min-width:140px;background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:11px 12px;font-size:12px;color:var(--ink-soft);
+  }
+  .desk-chip b{display:block;color:var(--ink);font-size:12.5px;margin-bottom:3px}
+
+  footer{padding:38px 0 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+  footer b{color:var(--ink-soft)}
+
+  /* ---------- Print ---------- */
+  @media print{
+    body{background:#fff}
+    .topbar{display:none}
+    section{page-break-inside:avoid;padding:26px 0}
+    .cover{background:#4b3f8f !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .card,.stat,.step,.tl-body,.tablewrap,.phone{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">Synod Digital Discipleship Platform</div>
+    <nav>
+      <a href="#journey">Journey</a>
+      <a href="#traceability">Traceability</a>
+      <a href="#act1">Act I</a>
+      <a href="#act2">Act II</a>
+      <a href="#act3">Act III</a>
+      <a href="#act4">Act IV</a>
+      <a href="#act5">Act V</a>
+      <a href="#deliverables">Your Inputs</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============ COVER ============ -->
+<section class="cover">
+  <div class="wrap">
+    <div class="eyebrow">Formal Scope of Work &amp; Product Blueprint</div>
+    <h1>The Digital Discipleship Platform</h1>
+    <p class="sub">A day in the life of a parishioner, and the technical specification behind it.<br>
+    Prepared for <strong>Metro D.C. Synod</strong> leadership &amp; the technical development team.</p>
+    <div class="meta">
+      <div><span>Document</span><b>Version 1.0 — Final</b></div>
+      <div><span>Traces To</span><b>Proposal, 10 Mar 2026</b></div>
+      <div><span>Scope Coverage</span><b>7 of 7 sections</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AT A GLANCE ============ -->
+<section id="glance">
+  <div class="wrap">
+    <div class="kicker">At a glance</div>
+    <h2>The whole platform in five numbers</h2>
+    <p class="lede">Five acts, one parishioner journey, one central control room. Everything below traces back to a numbered section of your original proposal.</p>
+    <div class="grid g4" style="margin-top:26px">
+      <div class="stat"><b>5</b><span>Life Role tracks: Worker, Parent, Student, Senior, Beginner</span></div>
+      <div class="stat"><b>5</b><span>Permanent habit pillars, adapted per role</span></div>
+      <div class="stat"><b>3–7</b><span>Members per small group, led by one Anchor</span></div>
+      <div class="stat"><b>70+</b><span>Parishes managed from one CSV upload</span></div>
+    </div>
+    <div class="grid g3" style="margin-top:16px">
+      <div class="card">
+        <h4 style="margin-top:0">Parishioner app · Admin portal</h4>
+        <p style="margin:0;font-size:13.6px;color:var(--ink-soft)">Acts I–IV run on <b>mobile + web</b> for parishioners (English &amp; Spanish). Act V — the Diocesan Admin Panel — is <b>web only</b> for Central Office.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">Grace, not guilt</h4>
+        <p style="margin:0;font-size:13.6px;color:var(--ink-soft)">All <b>5 habits</b> stay available every day. Checking any <b>2</b> (or finishing the reading) marks the day Complete — “2” is the success threshold, not a limit. Missed days show a 🍃 leaf, never a broken chain.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">Fenced AI, zero hallucination</h4>
+        <p style="margin:0;font-size:13.6px;color:var(--ink-soft)">The AI Guide never browses the internet. It answers only from PDFs your theological staff upload — and can answer in Spanish from English sources.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section id="journey">
+  <div class="wrap">
+    <div class="kicker">System flow</div>
+    <h2>How the whole platform works</h2>
+    <p class="lede">One admin portal publishes. The parishioner experience consumes. Five acts, connected.</p>
+
+    <div class="sysflow">
+      <div class="sys-block admin">
+        <div class="slabel">🖥️ Web only</div>
+        <div class="sys-admin-row">
+          <div class="n">V</div>
+          <div>
+            <h5>The Shepherd's Desk</h5>
+            <p>Central Office admin portal — the source of truth for the whole system.</p>
+          </div>
+        </div>
+        <div class="sys-pipes">
+          <span>Schedules daily content</span>
+          <span>Uploads AI PDFs</span>
+          <span>Syncs parish map</span>
+          <span>Sends alerts</span>
+          <span>Reviews analytics</span>
+        </div>
+      </div>
+
+      <div class="sys-arrow">
+        <div class="line"></div>
+        <div class="cap">publishes into</div>
+        <div class="chev">↓</div>
+      </div>
+
+      <div class="sys-block user">
+        <div class="slabel">📱 Mobile + Web</div>
+        <h3>The parishioner journey</h3>
+        <p class="sdesc">What Alex moves through after Central Office has published.</p>
+
+        <div class="sys-path">
+          <div class="sys-node">
+            <div class="n">I</div>
+            <h5>Finding Home</h5>
+            <p>Joins &amp; gets set up</p>
+          </div>
+          <div class="sys-node">
+            <div class="n">II</div>
+            <h5>The Daily Walk</h5>
+            <p>Lives the day</p>
+          </div>
+          <div class="sys-node">
+            <div class="n">III</div>
+            <h5>The Gathering</h5>
+            <p>Meets the group</p>
+          </div>
+          <div class="sys-node">
+            <div class="n">IV</div>
+            <h5>The Safe Teacher</h5>
+            <p>Asks the AI</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRACEABILITY ============ -->
+<section id="traceability">
+  <div class="wrap">
+    <div class="kicker">Master scope traceability matrix</div>
+    <h2>Every proposal requirement, accounted for</h2>
+    <p class="lede">A 1-to-1 cross-reference proving that every requirement from the original <b>Formal Proposal &amp; Scope of Work (10 Mar 2026)</b> is delivered in this specification.</p>
+
+    <div class="tablewrap" style="margin-top:24px">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:38px">#</th>
+            <th style="width:26%">Proposal section (10 Mar)</th>
+            <th>Core feature in original proposal</th>
+            <th style="width:22%">Delivered in</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num">1</td>
+            <td><b>User Authentication &amp; Onboarding</b><br><span style="color:var(--muted);font-size:12.5px">p. 3–4</span></td>
+            <td>Sign-up, language selection, Parish Finder map, State of Life tracks.</td>
+            <td><span class="tag">Act I — Flow 1</span></td>
+          </tr>
+          <tr>
+            <td class="num">2</td>
+            <td><b>The Daily Dashboard (Home Screen)</b><br><span style="color:var(--muted);font-size:12.5px">p. 4–5</span></td>
+            <td>Liturgical calendar header, progress ring, distraction-free UI.</td>
+            <td><span class="tag">Act II — Flow 2 (C)</span></td>
+          </tr>
+          <tr>
+            <td class="num">3</td>
+            <td><b>Spiritual Content Feed (“Daily Bread”)</b><br><span style="color:var(--muted);font-size:12.5px">p. 5</span></td>
+            <td>Bishop's audio reflection, scripture reader, persistent audio player, offline support.</td>
+            <td><span class="tag">Act II — Flow 2 (A)</span></td>
+          </tr>
+          <tr>
+            <td class="num">4</td>
+            <td><b>The “Digital Catechist” (Lutheran AI)</b><br><span style="color:var(--muted);font-size:12.5px">p. 5–6</span></td>
+            <td>Fenced AI knowledge base (Catechism &amp; pastoral letters), theological guardrails (RAG).</td>
+            <td><span class="tag">Act IV — Flow 4</span></td>
+          </tr>
+          <tr>
+            <td class="num">5</td>
+            <td><b>Customizable Habit Tracker</b><br><span style="color:var(--muted);font-size:12.5px">p. 6</span></td>
+            <td>Disciple's Menu, daily check-in UI, streak logic without shaming.</td>
+            <td><span class="tag">Act II — Flow 2 (B &amp; D)</span></td>
+          </tr>
+          <tr>
+            <td class="num">6</td>
+            <td><b>Basic Fraternity &amp; Accountability</b><br><span style="color:var(--muted);font-size:12.5px">p. 6</span></td>
+            <td>Small groups (3–7 people), Anchor system, Sunday weekly review form, group dashboard.</td>
+            <td><span class="tag">Act III — Flow 3</span></td>
+          </tr>
+          <tr>
+            <td class="num">7</td>
+            <td><b>The Diocesan Admin Panel (Web only)</b><br><span style="color:var(--muted);font-size:12.5px">p. 6–7</span></td>
+            <td>CMS for media &amp; readings, AI document manager, parish CSV importer, push alerts, user analytics.</td>
+            <td><span class="tag">Act V — Flow 5</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACT I ============ -->
+<section id="act1">
+  <div class="wrap">
+    <div class="actbadge">Act I · Flow 1</div>
+    <h2>Finding Home — onboarding &amp; personalization</h2>
+    <p class="lede">Fulfils <b>Section 1: User Authentication &amp; Onboarding (p. 3–4)</b>. Flow 1 walks a new member from download to Day 1.</p>
+
+    <h3>Flow 1 — New member onboarding experience</h3>
+    <div class="timeline" style="margin-top:8px">
+      <div class="tl-item">
+        <div class="tl-time">Step 1</div>
+        <div class="tl-body">
+          <h5>Launch &amp; account creation</h5>
+          <p>Alex downloads the app and registers securely using one of three paths:</p>
+          <div class="pillrow">
+            <span class="pill">Apple ID</span>
+            <span class="pill">Google</span>
+            <span class="pill">Email / Password</span>
+          </div>
+          <ul class="clean" style="margin-top:14px">
+            <li><b>Profile photo upload</b> — Alex can add a profile picture during account creation.</li>
+            <li><b>Forgot Password</b> — standard self-service recovery ensures seamless account access.</li>
+            <li><b>Guest mode is disabled</b> — deliberately, to protect community safety and preserve streak data.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">Step 2</div>
+        <div class="tl-body">
+          <h5>Language preference selection</h5>
+          <p>Alex selects <b>English</b>, with full native support for <b>Spanish</b>. The interface, lectionary readings, and AI responses all switch immediately.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">Step 3</div>
+        <div class="tl-body">
+          <h5>Parish selection via geolocation map (Parish Finder)</h5>
+          <p>With GPS enabled, the interactive map shows pins for nearby congregations so Alex can select his parish.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">Step 4</div>
+        <div class="tl-body">
+          <h5>State of Life (Life Role track) selection</h5>
+          <p>The app asks: <i>“Where do you spend the majority of your energy?”</i></p>
+          <div class="pillrow">
+            <span class="pill">💼 Worker / Professional</span>
+            <span class="pill">👶 Parent / Caregiver</span>
+            <span class="pill">🎓 Student / Youth</span>
+            <span class="pill">🕰️ Senior Citizen</span>
+            <span class="pill">🌱 Beginner</span>
+          </div>
+          <p style="margin-top:12px;margin-bottom:0">Alex selects <b>Office Worker / Professional</b>. The daily habits immediately adapt to workplace stress and ethical leadership. (The five short labels used across the app are Worker, Parent, Student, Senior, Beginner.)</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">Step 5</div>
+        <div class="tl-body">
+          <h5>Setting the rhythm (notification windows)</h5>
+          <p>Alex sets their commute reminder for <b>7:30 AM</b> and their evening wind-down for <b>8:30 PM</b>.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">Step 6</div>
+        <div class="tl-body">
+          <h5>Arrival on dashboard</h5>
+          <p>Day 1 opens with a reassuring message of grace: <b>“Take it one day at a time. This is not a test.”</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACT II ============ -->
+<section id="act2">
+  <div class="wrap">
+    <div class="actbadge">Act II · Flow 2</div>
+    <h2>The 24-hour walk of faith</h2>
+    <p class="lede">Fulfils <b>Section 2 (Daily Dashboard, p. 4–5)</b>, <b>Section 3 (Spiritual Content Feed / “Daily Bread”, p. 5)</b> and <b>Section 5 (Customizable Habit Tracker, p. 6)</b>. Daily habit loop with no-guilt streaks.</p>
+
+    <h3>A. The daily chronological journey</h3>
+    <p style="font-size:14px;color:var(--ink-soft);max-width:76ch;margin-bottom:4px">Notification times are the ones Alex chose during onboarding (Flow 1 Step 5) — in this story, <b>7:30 AM</b> commute and <b>8:30 PM</b> evening wind-down.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">7:30 AM</div>
+        <div class="tl-body">
+          <h5>Morning Reminder</h5>
+          <p>Push notification arrives at Alex's set morning window:</p>
+          <div class="card" style="margin-top:10px;padding:14px 16px;box-shadow:none">
+            <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:6px">Push · Morning</div>
+            <p style="margin:0;font-size:14px;color:var(--ink)">☀️ Today's Reflection is Ready — Take 3 minutes to center your morning. Tap to listen.</p>
+          </div>
+          <p style="margin-top:10px;margin-bottom:0;font-size:13.4px;color:var(--ink-soft)">Tapping the notification <b>deep-links directly into the audio player</b>.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">7:45 AM</div>
+        <div class="tl-body">
+          <h5>Morning commute — the Bishop's audio + Spotify</h5>
+          <ul class="clean" style="margin-top:6px">
+            <li><b>Unified sticky / persistent media player:</b> Alex listens to the 3-minute Bishop reflection while scrolling through the day's tasks. He can download the audio from the player itself for offline listening.</li>
+            <li><b>🎧 Spotify Companion Link:</b> below the audio player, a button reads <b>[ 🎵 Listen to our curated playlist on Spotify ]</b>. Tapping it smoothly opens the Synod's curated playlist in the Spotify app for the rest of the commute.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">12:30 PM</div>
+        <div class="tl-body">
+          <h5>Midday break — Daily Scripture Reader &amp; Habits</h5>
+          <ul class="clean" style="margin-top:6px">
+            <li><b>NRSVUE Scripture Reader:</b> Alex reads the daily assigned lectionary excerpt (font size adjustable with <b>[A− / A+]</b>). The reading itself is a ~2-minute lesson.</li>
+            <li><b>5 Daily Habits</b> are always available — tailored specifically for Alex's Life Role as an Office Worker. In today's story, Alex happens to check off 2 workplace habits at midday (enough to meet the Rule of Two), but he can check all 5.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">8:30 PM</div>
+        <div class="tl-body">
+          <h5>Evening Reminder → check-in</h5>
+          <p>Push notification arrives at Alex's set evening window:</p>
+          <div class="card" style="margin-top:10px;padding:14px 16px;box-shadow:none">
+            <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:6px">Push · Evening</div>
+            <p style="margin:0;font-size:14px;color:var(--ink)">🌙 Evening Wind-Down — Take 30 seconds to reflect. How was your day?</p>
+          </div>
+          <ul class="clean" style="margin-top:12px">
+            <li>Tapping the notification <b>deep-links directly to the check-in screen</b>.</li>
+            <li>The evening check-in window runs from <b>7:00 PM to 3:59 AM</b>.</li>
+            <li>Alex selects a mood status — <b>🟢 Good / 🟡 Tough / ⚪ Rest</b> — and optionally writes a <b>Private 1-Sentence Note</b> (strict <b>280-character cap / ~50 words</b>).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">3:59 AM</div>
+        <div class="tl-body">
+          <h5>Day officially closes</h5>
+          <p>Grace-based streak evaluation updates. Notes &amp; checks remain <b>encrypted on the phone for the current month</b>.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>B. The “No-Guilt” Streak Engine</h3>
+    <p style="font-size:14px;color:var(--ink-soft);max-width:76ch">Implements the mandate in Section 5 (p. 6) for <i>“streak logic to encourage consistency without shaming.”</i> Four rules — how a day is scored, then how the calendar and month keep score without guilt.</p>
+
+    <div class="decision">
+      <div class="out" style="border-left:3px solid var(--brand-2)">
+        <h5>🟢 Yes → Day Complete</h5>
+        <p><b>Rule of Two:</b> there are always <b>5 habits</b> on the Disciple's Menu. Checking <b>any 2</b> — <i>or</i> finishing the 2-minute daily reading — earns the 🟢 Complete badge and Monthly total <b>+1</b>. Alex may check all 5; “2” is the floor that marks success, not a ceiling.</p>
+      </div>
+      <div class="hub">
+        <b>Met Rule of Two?</b>
+        <span>Busy day / sickness is OK</span>
+      </div>
+      <div class="out" style="border-left:3px solid var(--gold)">
+        <h5>🍃 No → Rest Day</h5>
+        <p><b>Zero guilt, no penalty.</b> The calendar shows a peaceful green leaf (🍃) — never a red X or broken chain.</p>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:16px">
+      <div class="rule">
+        <h5>The 4:00 AM Cutoff</h5>
+        <p>The operational day runs from <b>4:00 AM to 3:59 AM</b>. Shift workers and night owls reflecting at 1:15 AM receive full credit for the day just completed.</p>
+      </div>
+      <div class="rule">
+        <h5>Monthly consistency over fragile chains</h5>
+        <p>Progress is measured cumulatively — e.g. <b>“22 / 25 Days Active this Month (88% Consistency)”</b> — eliminating the anxiety of starting from zero.</p>
+      </div>
+    </div>
+
+    <h3>C. The Daily Dashboard layout</h3>
+    <div class="grid g2" style="margin-top:16px;align-items:start">
+      <div>
+        <div class="phone">
+          <div class="ph-top"><span>9:41</span><span>▮▮▮ ⌁ ▰</span></div>
+          <div class="ph-greet">☀️ Good Morning, Alex</div>
+          <div class="ph-date">📅 Friday, October 12</div>
+          <div class="ph-lit">🕊️ Friday of the Third Week of Lent <span style="opacity:.7">· CMS header</span></div>
+
+          <div class="ph-block">
+            <div class="ph-lbl">📅 October Journey · Progress Ring &amp; Ratio</div>
+            <div class="ph-ratio"><span>22 / 25 Days Active</span><span style="color:var(--brand-2)">88%</span></div>
+            <div class="bar"><i></i></div>
+          </div>
+
+          <div class="ph-block">
+            <div class="ph-lbl">🎵 Today's 3-minute audio (Bishop's Corner)</div>
+            <div class="ph-btn primary">▶ Play: “Finding Calm in a Busy City”</div>
+            <div class="ph-btn spotify">🎵 Listen to our curated playlist on Spotify</div>
+            <div class="ph-btn ghost">📖 Read 2-min NRSVUE lesson · [A− / A+]</div>
+          </div>
+
+          <div class="ph-block">
+            <div class="ph-lbl">📋 Today's Disciple Habits · 5 available</div>
+            <div class="habit"><span class="box on">✓</span><span><b>1. Learn:</b> 3 deep breaths before opening email</span></div>
+            <div class="habit"><span class="box on">✓</span><span><b>2. Help:</b> Mentor a teammate on their project</span></div>
+            <div class="habit"><span class="box"></span><span><b>3. Fairness:</b> Give credit to quiet colleagues</span></div>
+            <div class="habit"><span class="box"></span><span><b>4. Spread Good:</b> Forgive an annoying email</span></div>
+            <div class="habit"><span class="box"></span><span><b>5. Connect:</b> Lunch away from desk</span></div>
+            <div class="goalbanner">Today's Goal Achieved! (🟢) · Rule of Two met</div>
+          </div>
+        </div>
+        <div class="mockcap">Indicative layout — sticky audio player, all 5 habits visible, goal fires the moment the Rule of Two is met.</div>
+      </div>
+
+      <div>
+        <ul class="clean" style="margin-top:6px">
+          <li><b>Liturgical Calendar Header</b> — injected by staff via the Web CMS (e.g. “Friday of the Third Week of Lent”), orienting Alex to the Church calendar.</li>
+          <li><b>Progress Ring &amp; Ratio</b> — “22 / 25 Days Active” with the consistency percentage, always visible at the top of the home screen.</li>
+          <li><b>Persistent / sticky audio player</b> — Bishop's 3-minute reflection keeps playing while Alex scrolls tasks; he can download it from the player for offline listening.</li>
+          <li><b>Spotify Companion Link</b> — exact CTA: <i>“Listen to our curated playlist on Spotify.”</i></li>
+          <li><b>NRSVUE Scripture Reader</b> — daily lectionary excerpt with <b>[A− / A+]</b> font controls.</li>
+          <li><b>5 Daily Habits checklist</b> — all five stay on the Disciple's Menu every day; checking any two (or finishing the reading) is enough to complete the day.</li>
+          <li><b>Instant tactile feedback</b> — the moment the Rule of Two is met (e.g. ticking the second habit, or finishing the reading), a gentle haptic vibration fires and the progress ring turns bright green: <i>“Today's Goal Achieved! (🟢)”</i>.</li>
+          <li><b>Monthly Journey Calendar</b> — tapping the header widget expands a 30-day calendar of green dots and rest leaves. Tapping past days reveals that day's checkboxes and private notes.</li>
+          <li><b>Distraction-Free UI</b> — one screen, one day, no feeds or noise.</li>
+        </ul>
+        <div class="callout" style="margin-top:18px">
+          <b>Privacy by design:</b> notes &amp; checks are encrypted on the phone for the current month. The private 280-character note is never shown to the group — only the mood status dot is shared.
+        </div>
+      </div>
+    </div>
+
+    <h3>D. The 5 Habit Themes across Life Roles (The Disciple's Menu)</h3>
+    <p style="font-size:14px;color:var(--ink-soft);max-width:76ch">The 5 habit categories remain <b>permanent pillars</b> across the app, while the daily actions adapt to each Life Role. Every role always sees all five; the Rule of Two only decides when the day counts as Complete.</p>
+    <div class="tablewrap" style="margin-top:18px">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:15%">Life role</th>
+            <th>1 · Learn &amp; Center</th>
+            <th>2 · Help Someone</th>
+            <th>3 · Stand for Fairness</th>
+            <th>4 · Spread Good</th>
+            <th>5 · Connect</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>💼 Worker</b><br><span style="color:var(--muted);font-size:12px">Professional</span></td>
+            <td>3 deep breaths before email</td>
+            <td>Mentor a junior colleague</td>
+            <td>Fair credit in meetings</td>
+            <td>Forgive an annoying email</td>
+            <td>Lunch away from desk</td>
+          </tr>
+          <tr>
+            <td><b>👶 Parent</b><br><span style="color:var(--muted);font-size:12px">Caregiver</span></td>
+            <td>2 min morning quiet</td>
+            <td>15 min undivided play</td>
+            <td>Teach playground empathy</td>
+            <td>Unconditional love reminder</td>
+            <td>Check in with a parent</td>
+          </tr>
+          <tr>
+            <td><b>🎓 Student</b><br><span style="color:var(--muted);font-size:12px">Youth</span></td>
+            <td>Mindful exam pause</td>
+            <td>Invite lonely peer to lunch</td>
+            <td>Support campus cause</td>
+            <td>Compliment anxious peer</td>
+            <td>Campus group meetup</td>
+          </tr>
+          <tr>
+            <td><b>🕰️ Senior</b><br><span style="color:var(--muted);font-size:12px">Senior Citizen</span></td>
+            <td>Quiet morning reflection</td>
+            <td>Call homebound friend</td>
+            <td>Support local food pantry</td>
+            <td>Share life wisdom</td>
+            <td>Community social hour</td>
+          </tr>
+          <tr>
+            <td><b>🌱 Beginner</b></td>
+            <td>Read 1-min core values</td>
+            <td>Small act of kindness</td>
+            <td>Explore local charity</td>
+            <td>Note of appreciation</td>
+            <td>Branch open-house</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACT III ============ -->
+<section id="act3">
+  <div class="wrap">
+    <div class="actbadge">Act III · Flow 3</div>
+    <h2>The Gathering — small groups &amp; Anchor accountability</h2>
+    <p class="lede">Fulfils <b>Section 6: Basic Fraternity &amp; Accountability (p. 6)</b>. The group dashboard is deliberately designed as an <b>offline trigger</b>: status dots are meant to prompt a real phone call or a shared lunch — not replace face-to-face fellowship.</p>
+
+    <div class="grid g2" style="margin-top:24px;align-items:start">
+      <div>
+        <h4 style="margin-top:0">Group formation &amp; the Anchor role</h4>
+        <ul class="clean">
+          <li>Groups (cohorts) are capped at <b>3 to 7 people maximum</b> to maintain intimacy and trust.</li>
+          <li><b>The Group Anchor</b> (Marcus in the story) acts as the spiritual facilitator, with exactly <b>two administrative tools</b>:</li>
+          <li><b>Pinned “Thought of the Day”</b> — Marcus posts a short reflection (<b>max 200 characters</b>) pinned at the top of the group dashboard. Anchor-only <b>[ ✏️ Edit Message ]</b> control.</li>
+          <li><b>Roster moderation</b> — Marcus can remove inactive members via a <b>[⋮]</b> menu to reopen invite slots under the 7-person limit.</li>
+        </ul>
+
+        <h4>The Group Dashboard (The Offline Trigger)</h4>
+        <ul class="clean">
+          <li>Daily <b>member status dots</b> show who has checked in (🟢), who needs support (🟡), and who hasn't checked in (⚪).</li>
+          <li>Those dots are the cue to reach out offline — a phone call or lunch — not an in-app chat feed.</li>
+          <li>Private evening notes are <b>never</b> visible here; only the mood / status signal is shared.</li>
+        </ul>
+
+        <h4>Sunday Weekly Review Form &amp; Feed</h4>
+        <p style="font-size:14px;color:var(--ink-soft);margin-bottom:10px">Unlocks every <b>Sunday at 8:00 AM</b> with 3 structured questions:</p>
+        <ul class="clean">
+          <li>Where did I struggle this week?</li>
+          <li>Where did I experience gratitude or God's grace?</li>
+          <li>What is my spiritual focus for next week?</li>
+        </ul>
+        <div class="callout" style="margin-top:14px">
+          <b>7-Day Visibility:</b> submitted answers remain visible on the group dashboard all week (the weekly review feed), giving group members meaningful topics for Sunday fellowship.
+        </div>
+      </div>
+
+      <div>
+        <div class="roster">
+          <header><span>👥 Capitol Hill Cohort <span style="color:var(--muted);font-weight:500">(5/7 Members)</span></span><span style="color:var(--muted);font-size:13px">Settings ⚙️</span></header>
+          <div class="anchor-msg">
+            <div class="who">⚓ Anchor's Message of the Day · Max 200 chars</div>
+            <p>Marcus (Anchor): “Big deadline week for many—remember to take a 10-minute walk at lunch today and breathe!”</p>
+            <div style="margin-top:10px;font-size:12px;color:var(--brand);font-weight:650">✏️ Edit Message <span style="color:var(--muted);font-weight:500">(Anchor only)</span></div>
+          </div>
+          <div style="padding:0 18px 10px"><div class="ph-lbl">📋 Member Status Today · Offline trigger</div></div>
+          <div class="rrow"><span class="who">Marcus <span style="color:var(--muted);font-weight:500">(Anchor)</span></span><span class="st"><span class="dot g"></span>🟢 Checked In</span></div>
+          <div class="rrow"><span class="who">Alex</span><span class="st"><span class="dot g"></span>🟢 Checked In</span></div>
+          <div class="rrow"><span class="who">Sarah</span><span class="st"><span class="dot y"></span>🟡 Needs Support</span></div>
+          <div class="rrow"><span class="who">David</span><span class="st"><span class="dot g"></span>🟢 Checked In</span></div>
+          <div class="rrow"><span class="who">Maya</span><span class="st"><span class="dot w"></span>⚪ Hasn't checked in <span style="color:var(--muted)">[⋮]</span></span></div>
+        </div>
+        <div class="mockcap">Anchor [⋮] on Maya reopens an invite slot under the 7-person cap. Status dots prompt a real call or lunch.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACT IV ============ -->
+<section id="act4">
+  <div class="wrap">
+    <div class="actbadge">Act IV · Flow 4</div>
+    <h2>The Safe Companion — the Smart AI Guide</h2>
+    <p class="lede">Fulfils <b>Section 4: The “Digital Catechist” Lutheran AI Assistant (p. 5–6)</b>. Zero-hallucination Q&amp;A — Alex asks a theological question; the AI searches only approved Synod PDFs &amp; the Catechism with guardrails.</p>
+
+    <div class="grid g3" style="margin-top:24px">
+      <div class="card">
+        <h4 style="margin-top:0">🔒 Fenced AI Knowledge Base (RAG Architecture)</h4>
+        <p style="margin:0;font-size:13.8px;color:var(--ink-soft)">The AI <b>does not browse the public internet</b>. It strictly queries verified PDF documents uploaded by the Synod theological staff — including Luther's Small Catechism, Synod Constitution/Bylaws, and active Social Statements / pastoral letters.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">🛡️ Theological Guardrails</h4>
+        <p style="margin:0;font-size:13.8px;color:var(--ink-soft)">If Alex asks an out-of-scope question (e.g. political voting advice or stock tips), the AI politely declines: <i>“I am only trained to assist you with our community guidelines, Lutheran teachings, and daily reflections.”</i></p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">🌐 Cross-Lingual Intelligence</h4>
+        <p style="margin:0;font-size:13.8px;color:var(--ink-soft)">If Synod staff uploads a Social Statement in English, and a native Spanish speaker asks a question in Spanish, the AI reads the English theology and answers in <b>natural, fluent Spanish</b>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACT V ============ -->
+<section id="act5">
+  <div class="wrap">
+    <div class="actbadge">Act V · Flow 5</div>
+    <h2>The Shepherd's Control Center — Central Office Web CMS</h2>
+    <p class="lede">Fulfils <b>Section 7: The Diocesan Admin Panel (Web Only) (p. 6–7)</b>. One desktop admin portal. Five modules drive everything parishioners see.</p>
+
+    <div class="desk">
+      <div class="desk-chrome">
+        <div class="desk-dots"><i></i><i></i><i></i></div>
+        <div class="desk-url">🔒 cms.metrodcsynod.org / content-calendar</div>
+      </div>
+      <div class="desk-body">
+        <aside class="desk-nav">
+          <div class="who">Admin Portal</div>
+          <div class="user">
+            <div class="avatar">A</div>
+            <div>
+              <div class="uname">Central Office</div>
+              <div class="urole">Desktop · Web only</div>
+            </div>
+          </div>
+          <a class="on" href="#act5"><span>📅</span> Content Calendar</a>
+          <a href="#act5"><span>📄</span> AI Document Hub</a>
+          <a href="#act5"><span>🗺️</span> Parish Map Sync</a>
+          <a href="#act5"><span>📊</span> User Analytics</a>
+          <a href="#act5"><span>📣</span> Communications</a>
+        </aside>
+        <div class="desk-main">
+          <div class="toprow">
+            <div>
+              <h5>Content Calendar — October 2026</h5>
+              <div class="sub">Schedule 3-min audio · 2-min NRSVUE reading · Liturgical header · date by date</div>
+            </div>
+            <button class="desk-btn" type="button">+ Schedule day</button>
+          </div>
+
+          <div class="desk-cal">
+            <div class="ch">Date</div>
+            <div class="ch">🎵 3-min audio</div>
+            <div class="ch">📖 2-min reading</div>
+            <div class="ch">🕊️ Liturgical header</div>
+
+            <div class="day">Fri 10<small>Oct</small></div>
+            <div class="cell ok"><b>Uploaded</b>Finding Calm in a Busy City.mp3</div>
+            <div class="cell ok"><b>Scheduled</b>NRSVUE — Psalm 46:1–3</div>
+            <div class="cell ok"><b>Scheduled</b>Friday of the Third Week of Lent</div>
+
+            <div class="day">Sat 11<small>Oct</small></div>
+            <div class="cell ok"><b>Uploaded</b>Rest for the Weary.mp3</div>
+            <div class="cell ok"><b>Scheduled</b>NRSVUE — Matthew 11:28–30</div>
+            <div class="cell ok"><b>Scheduled</b>Saturday of the Third Week of Lent</div>
+
+            <div class="day">Sun 12<small>Oct</small></div>
+            <div class="cell pending"><b>Pending</b>Upload MP3…</div>
+            <div class="cell pending"><b>Pending</b>Add passage…</div>
+            <div class="cell pending"><b>Pending</b>Add header…</div>
+          </div>
+
+          <div class="desk-chips">
+            <div class="desk-chip"><b>📄 AI Document Hub</b>Upload official PDFs into the AI's brain</div>
+            <div class="desk-chip"><b>🗺️ Parish Map Sync</b>One CSV → update all 70+ parish pins &amp; times</div>
+            <div class="desk-chip"><b>📊 User Analytics</b>Active users across all 70 congregations</div>
+            <div class="desk-chip"><b>📣 Communications</b>Global / parish alerts + moderate accounts</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mockcap">Indicative Central Office admin portal — Content Calendar open; the other four modules sit in the left nav.</div>
+
+    <div class="tablewrap" style="margin-top:20px">
+      <table>
+        <thead>
+          <tr><th style="width:22%">Module</th><th>What the admin portal does</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>📅 Content Calendar Scheduler</b><br><span class="tag" style="margin-top:6px">English &amp; Spanish</span></td>
+            <td>
+              Staff uploads <b>MP3 audio files weeks in advance</b>.<br>
+              <b>Daily Scripture Upload (NRSVUE):</b> schedules the daily passage text and reference directly on the content calendar. By scheduling passages date-by-date, the Synod team can walk parishioners through whole books of the Bible sequentially from start to finish.<br>
+              <b>Daily Liturgical Header Field:</b> staff schedules the custom seasonal label date-by-date on the same content calendar (e.g. “Friday of the Third Week of Lent”), which populates all mobile app headers — same calendar workflow as the 3-min audio and 2-min reading.
+            </td>
+          </tr>
+          <tr>
+            <td><b>📄 AI Document Center / Hub</b></td>
+            <td>Whatever Central Office wants parishioners to learn from — catechism, constitution, social statements, pastoral letters — gets uploaded as PDFs here. Once uploaded, users can chat with the AI Guide about those documents. The AI only answers from what has been uploaded; it does not browse the open internet.</td>
+          </tr>
+          <tr>
+            <td><b>🗺️ Parish Directory Importer / Map Sync</b><br><span class="tag" style="margin-top:6px">English &amp; Spanish</span></td>
+            <td>Uploading a <b>single CSV spreadsheet</b> instantly updates pins, worship times, and pastor contacts for all congregations (70+ parish locations &amp; times).</td>
+          </tr>
+          <tr>
+            <td><b>📣 Targeted Push Notifications / Communications</b></td>
+            <td>
+              <b>Global Alerts:</b> sent to all regional members (e.g. “Synod Assembly live stream starts at 10 AM”).<br>
+              <b>Parish Alerts:</b> filtered to a specific congregation (e.g. “Capitol Hill cleanup postponed”).
+            </td>
+          </tr>
+          <tr>
+            <td><b>📊 User Analytics &amp; Roster Moderation</b></td>
+            <td>
+              Displays high-level adoption metrics: <b>Total Active Users</b> and a <b>Congregation Breakdown</b> (e.g. “St. John's has 220 active users”) across all 70 congregations.<br>
+              Allows staff to audit and quietly remove duplicate, ghost, or inappropriate accounts to ensure data health.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DELIVERABLES ============ -->
+<section id="deliverables">
+  <div class="wrap">
+    <div class="kicker">Client deliverables &amp; data dependencies</div>
+    <h2>What we need from the Synod</h2>
+    <p class="lede">To ensure an on-time deployment, the development team requires the following assets and data from Synod staff.</p>
+
+    <h3>1 · Initial Content Seed Pack</h3>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th style="width:30%">Asset</th><th>Detail required</th><th style="width:15%">Languages</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Parish / Congregation Directory</b><br><span style="color:var(--muted);font-size:12.5px">Excel or CSV</span></td>
+            <td>Columns: Parish Name, Full Address, City, State, ZIP, Pastor/Deacon Name, Primary Sunday Service Times, Website URL, and Primary Languages Spoken.</td>
+            <td><span class="tag">EN &amp; ES</span></td>
+          </tr>
+          <tr>
+            <td><b>🎧 Curated Spotify Playlist URL</b></td>
+            <td>The public share link / deep-link URL for the Synod's curated Spotify playlist (hymns, worship, meditation).</td>
+            <td><span class="tag green">One link</span></td>
+          </tr>
+          <tr>
+            <td><b>AI Knowledge Base Launch Pack</b><br><span style="color:var(--muted);font-size:12.5px">PDFs</span></td>
+            <td>The approved theological documents the AI Guide is permitted to reference: <b>Luther's Small Catechism</b>, <b>Synod Constitution/Bylaws</b>, and active <b>Social Statements</b> (e.g. Caring for Creation, Racial Justice).</td>
+            <td><span class="tag green">As available</span></td>
+          </tr>
+          <tr>
+            <td><b>Daily Habit Prompt Bank Approval</b></td>
+            <td>The development team will supply an initial seed bank of <b>~75 curated daily habits</b> across the 5 Life Roles. The Synod communications team reviews and approves the wording.</td>
+            <td><span class="tag">EN &amp; ES</span></td>
+          </tr>
+          <tr>
+            <td><b>Launch Audio Reflections &amp; NRSVUE readings</b><br><span style="color:var(--muted);font-size:12.5px">First 30 Days</span></td>
+            <td><b>30 audio recordings</b> (MP3, 3 minutes each) and NRSVUE readings from the Bishop or appointed clergy. English and Spanish files.</td>
+            <td><span class="tag">EN &amp; ES</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>3 · Ongoing Operational Responsibility (Post-Launch)</h3>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:-4px">Numbering follows the source document (section 2 is not used in the original pack).</p>
+    <div class="grid g2">
+      <div class="card">
+        <h4 style="margin-top:0">Weekly Audio Ingestion</h4>
+        <p style="margin:0;font-size:13.8px;color:var(--ink-soft)">Staff uploads upcoming reflections via the Web CMS content calendar — scheduling the <b>3-min audio</b>, the <b>2-min NRSVUE reading</b>, and the <b>Daily Liturgical Header</b> date-by-date.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">Community Oversight</h4>
+        <p style="margin:0;font-size:13.8px;color:var(--ink-soft)">Periodic review of active users and removal of inactive/inappropriate accounts.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>Document Version 1.0 — Final Story-Driven Scope of Work.</b><br>
+    Prepared for Metro D.C. Synod Leadership &amp; Technical Development Team.<br>
+    Traces to the Formal Proposal &amp; Scope of Work dated 10 March 2026.
+  </div>
+</footer>
+
+</body>
+</html>
