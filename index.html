@@ -288,9 +288,18 @@
   .anchor-msg{margin:16px 18px;background:var(--brand-soft);border-radius:10px;padding:14px 16px}
   .anchor-msg .who{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);font-weight:700;margin-bottom:6px}
   .anchor-msg p{margin:0;font-size:13.4px;color:#3d3470;font-style:italic}
-  .rrow{display:flex;justify-content:space-between;align-items:center;padding:11px 18px;border-top:1px solid var(--line);font-size:13.6px}
-  .rrow .who{font-weight:600}
-  .rrow .st{font-size:12.5px;font-weight:650;display:flex;align-items:center;gap:7px}
+  .rrow{
+    display:grid;grid-template-columns:1fr minmax(130px,auto) 32px;gap:10px;align-items:center;
+    padding:11px 14px 11px 18px;border-top:1px solid var(--line);font-size:13.6px;
+  }
+  .rrow .who{font-weight:600;min-width:0}
+  .rrow .st{font-size:12.5px;font-weight:650;display:flex;align-items:center;gap:7px;justify-self:start;white-space:nowrap}
+  .rrow .menu{
+    width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:#fafbfe;
+    color:var(--muted);display:inline-flex;align-items:center;justify-content:center;
+    font-size:16px;font-weight:700;line-height:1;justify-self:end;
+  }
+  .rrow .menu.ghost{visibility:hidden}
   .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
   .dot.g{background:#0f9d76}.dot.y{background:#e0a52b}.dot.w{background:#c3c8db}
 
@@ -994,13 +1003,33 @@
             <div style="margin-top:10px;font-size:12px;color:var(--brand);font-weight:650">✏️ Edit Message <span style="color:var(--muted);font-weight:500">(Anchor only)</span></div>
           </div>
           <div style="padding:0 18px 10px"><div class="ph-lbl">📋 Member Status Today · Offline trigger · Code CAP-789</div></div>
-          <div class="rrow"><span class="who">Marcus <span style="color:var(--muted);font-weight:500">(Anchor)</span></span><span class="st"><span class="dot g"></span>🟢 Checked In</span></div>
-          <div class="rrow"><span class="who">Alex</span><span class="st"><span class="dot g"></span>🟢 Checked In <span style="color:var(--muted)">[⋮]</span></span></div>
-          <div class="rrow"><span class="who">Sarah</span><span class="st"><span class="dot y"></span>🟡 Needs Support <span style="color:var(--muted)">[⋮]</span></span></div>
-          <div class="rrow"><span class="who">David</span><span class="st"><span class="dot g"></span>🟢 Checked In <span style="color:var(--muted)">[⋮]</span></span></div>
-          <div class="rrow"><span class="who">Maya</span><span class="st"><span class="dot w"></span>⚪ Hasn't checked in <span style="color:var(--muted)">[⋮]</span></span></div>
+          <div class="rrow">
+            <span class="who">Marcus <span style="color:var(--muted);font-weight:500">(Anchor)</span></span>
+            <span class="st"><span class="dot g"></span>Checked In</span>
+            <span class="menu ghost" aria-hidden="true">⋮</span>
+          </div>
+          <div class="rrow">
+            <span class="who">Alex</span>
+            <span class="st"><span class="dot g"></span>Checked In</span>
+            <span class="menu" title="Remove member">⋮</span>
+          </div>
+          <div class="rrow">
+            <span class="who">Sarah</span>
+            <span class="st"><span class="dot y"></span>Needs Support</span>
+            <span class="menu" title="Remove member">⋮</span>
+          </div>
+          <div class="rrow">
+            <span class="who">David</span>
+            <span class="st"><span class="dot g"></span>Checked In</span>
+            <span class="menu" title="Remove member">⋮</span>
+          </div>
+          <div class="rrow">
+            <span class="who">Maya</span>
+            <span class="st"><span class="dot w"></span>Hasn't checked in</span>
+            <span class="menu" title="Remove member">⋮</span>
+          </div>
         </div>
-        <div class="mockcap">Anchor [⋮] on any member removes them and reopens a slot under the 7-person cap. Also: Lock Group / Regenerate Code.</div>
+        <div class="mockcap">The ⋮ menu on any member lets the Anchor remove them and reopen a slot. Also: Lock Group / Regenerate Code.</div>
       </div>
     </div>
   </div>
